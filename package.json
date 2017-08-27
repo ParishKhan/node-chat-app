@@ -1,0 +1,31 @@
+{
+  "name": "node-chat-app",
+  "version": "1.0.0",
+  "description": "A simple chat app build with NodeJS",
+  "main": "index.js",
+  "engines": {
+    "node": "7.9.0"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParishKhan/node-chat-app.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "Chat",
+    "App"
+  ],
+  "author": "Parish Khan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ParishKhan/node-chat-app/issues"
+  },
+  "homepage": "https://github.com/ParishKhan/node-chat-app#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
