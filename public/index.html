@@ -5,10 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NodeJS Chat APP</title>
+
+  <link rel="stylesheet" href="css/semantic.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Hello Chat App</h1>
+  <section>
+    <h4>Welcome To Chit Chat</h4>
+  </section>
 
+  <section>
+    <div id="messages"></div>
+  </section>
+
+  <form id="message-form">
+    <input type="text" name="message" id="text">
+    <button>Send</button>
+  </form>
+
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/custom.js"></script>
 </body>

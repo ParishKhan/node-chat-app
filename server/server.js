@@ -6,7 +6,7 @@ const socketIO = require('socket.io');
 const {generateMessage} = require('./utils/message.js');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 
 app.use(express.static(path.join(__dirname, '../public')));
 
@@ -19,9 +19,9 @@ io.on('connection', (socket) => {
   socket.emit('newMessage', generateMessage('Admin', 'Welcome to chat'));
 
   socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'))
-  socket.on('createMessage', (msg) => {
+  socket.on('createMessage', (msg, callback) => {
     io.emit('newMessage', generateMessage(msg.from, msg.text));
-
+    callback();
     // socket.broadcast.emit('newMessage', {
     //   from: msg.from,
     //   text: msg.text,
