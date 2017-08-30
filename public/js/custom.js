@@ -11,14 +11,14 @@ socket.on('disconnect', function () {
 socket.on('newMessage', function(msg) {
   console.log(msg);
   var li = $('<li></li>');
-  li.text(msg.from+ ": " + msg.text)
+  li.text(msg.from + " " + msg.createdAt + ": " + msg.text)
   $('#messages').append(li);
 });
 
 socket.on('newLocationMessage', function(location) {
   console.log(location);
   var li = $('<li></li>');
-  li.text(location.from+ ": ");
+  li.text(location.from + " " + location.createdAt + ": ");
 
   var a = $('<a>My Current Location</a>');
   a.attr('target', '_blank');
