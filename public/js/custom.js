@@ -15,6 +15,19 @@ socket.on('newMessage', function(msg) {
   $('#messages').append(li);
 });
 
+socket.on('newLocationMessage', function(location) {
+  console.log(location);
+  var li = $('<li></li>');
+  li.text(location.from+ ": ");
+
+  var a = $('<a>My Current Location</a>');
+  a.attr('target', '_blank');
+  a.attr('href', location.url);
+
+  li.append(a)
+  $('#messages').append(li)
+})
+
 $('#message-form').on('submit', function(e) {
   e.preventDefault();
 
@@ -24,5 +37,23 @@ $('#message-form').on('submit', function(e) {
   }, function() {
     console.log('Got it');
   });
+});
 
-})
+
+var locationButton = $('#location-button');
+ locationButton.on('click', function(e) {
+  e.preventDefault();
+
+  if(!navigator.geolocation) {
+    alert('Geolocation not supported by your browser!');
+  } else {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      socket.emit('createLocationMessage', {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude
+      });
+    }, function() {
+      alert('Unable to fetch location!')
+    })
+  }
+ })
