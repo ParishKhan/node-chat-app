@@ -10,7 +10,7 @@ describe('generateMessage', () => {
 
     expect(message.from).toBe(from);
     expect(message.text).toBe(text);
-    expect(message.createdAt).toBeA('number');
+    expect(message.createdAt).toBeA('string');
     done();
   })
 });
@@ -23,6 +23,6 @@ describe('generateLocationMessage', () => {
 
     expect(locationdata.from).toBe(from);
     expect(locationdata.url).toBe("https://www.google.com/maps?q=1,1");
-    expect(locationdata.createdAt).toBeA('number');
+    expect(locationdata.createdAt).toBeA('string');
   })
 })

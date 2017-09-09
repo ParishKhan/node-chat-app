@@ -28,6 +28,7 @@
   "homepage": "https://github.com/ParishKhan/node-chat-app#readme",
   "dependencies": {
     "express": "^4.15.4",
+    "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "socket.io": "^2.0.3"
   },
